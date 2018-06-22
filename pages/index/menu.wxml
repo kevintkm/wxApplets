@@ -1,0 +1,12 @@
+<template name="menu">
+<scroll-view style='width:{{screenwidth}}px' scroll-x scroll-into-view='{{animationScroll}}' scroll-left='{{left}}'>
+<view style='display:flex;flex-direction:row;width:{{screenwidth/product.column*product.materialList.length}}px'>
+  <block wx:for="{{product.materialList}}">
+  <view style='padding:4px;width:{{screenwidth/product.column}}px;justify-content:center;display:flex;flex-direction:column' bindtap='menuClick' data-index='{{index}}' id='index{{index}}'>
+  <text style="text-align:center;color:{{index==selectindex?'#f00':'#000'}};font-size:15px">{{item.title}}</text>
+  </view>
+  </block>
+  </view>
+      <view  animation="{{animationData}}" style='background:#ff534c;height:2px;width:{{screenwidth/product.column}}px'></view>
+  </scroll-view>
+</template>

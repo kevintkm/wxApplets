@@ -1,0 +1,2 @@
+<!--pages/person/person.wxml-->
+<text  bindtap='orderTap'>点我看订单</text>

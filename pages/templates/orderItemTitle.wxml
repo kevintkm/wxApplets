@@ -1,0 +1,13 @@
+@import'../../order/orderList.wxss'
+<template name='order_item_title'>
+  <view class='order_title_container'>
+    <view style='flex:1;width:100%;text-align:left;padding-top:8px;padding-bottom:8px'>
+      <image class='order_item_title_image' src="../../images/icon_search_shop_tag.png"></image>
+      <text class='order_title_item_text'>{{order.shop_title}}</text>
+      <image class='order_item_title_image' src="../../images/group_avatar.png"></image>
+    </view>
+    <text style='text-align:right;margin-right:4px;padding-top:8px;padding-bottom:8px;color:red'>{{order.buyer_order_status=='3'?'交易完成':'交易关闭'}}</text>
+  </view>
+
+  <view class='order_title_diliver' />
+</template>

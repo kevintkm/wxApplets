@@ -1,0 +1,33 @@
+<!--
+  index: int
+  msg: string
+  time: string
+-->
+<template name="productView">
+  <block wx:for="{{product.goodsList}}">
+    <image style='width:100%; height:{{375/product.column*0.026666667}}px' src="http://img.mengdian.com/image/07/7d/7b/13/20160805/a5945e20771da1633f76a746ca0f4bad.jpg?mdw=750&mdh=20&x-oss-process=image/quality,q_80" wx:if="{{item.index>0}}"
+    mode='scaleToFill'/>
+    <view>
+      <image style='width:{{screenwidth/product.column}}px; height:{{375/product.column*product.ratio}}px' src="{{item.index_image}}" />
+      <view class='product_bottom'>
+        <text class='product_title'> {{item.title}} </text>
+        <view class='product_text'>
+          <view>
+            <text class='product_currentPrice'>￥{{item.sale_price}}</text>
+            <text class='product_highPrice'>￥{{item.highMarketPrice}}</text>
+          </view>
+          <view class='join'>
+            <view class='jion_info'>
+              <image src='../../images/group_avatar.png' style='width:15px;height:15px'></image>
+              <text class='join_left'>{{item.groupLeastMember}}人团</text>
+            </view>
+            <view class='jion_in'>
+              <text class='join_right'>{{item.groupLeastMember}}人团</text>
+              <image src='../../images/group_left_arrow.png' style='width:15px;height:15px'></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </block>
+</template>

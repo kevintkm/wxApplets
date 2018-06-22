@@ -1,0 +1,12 @@
+@import'../../order/orderList.wxss'
+<template name='order_item_content'>
+<view class='order_title_container'>
+<image style='margin:18px;width:100px;height:100px' src='{{product.goods_index_image}}'></image>
+<view style='margin-top:18px;display:flex;flex-direction:column'>
+<text style='overflow : hidden;text-overflow: ellipsis;display: -webkit-box;-webkit-line-clamp: 2;-webkit-box-orient: vertical;'>{{product.goods_title}}</text>
+<text style='color:#aaa'>{{product.sku_name}}</text>
+<image style='width:50px;height:18px' src='{{url}}'></image>
+</view>
+</view>
+<view class='order_title_diliver' />
+</template>

@@ -1,0 +1,11 @@
+<template name="horizontalPView">
+<scroll-view scroll-x="true">
+<view style='display:flex;flex-direction:row;width:100%'>
+  <block wx:for="{{product.goodsList}}">
+  <view style='width:{{375/product.column}}px'>
+  <image style='width:{{375/product.column}}px; height:{{375/product.column*product.ratio}}px' src='{{item.index_image}}'/>
+  </view>
+  </block>
+  </view>
+  </scroll-view>
+</template>

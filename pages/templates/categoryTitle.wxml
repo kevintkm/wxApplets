@@ -1,0 +1,8 @@
+@import "../category/category.wxss";
+<template name="category_title">
+<view class='category_title_container'>
+<text style='flex:1'>{{product.title}}</text>
+ <text style='flex:1;text-align:right'>查看更多</text> 
+<!-- <image src='../../images/group_avatar.png' style='height:25px;width:25px'></image> -->
+</view>
+</template>

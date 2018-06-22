@@ -1,0 +1,32 @@
+<!--index.wxml-->
+<import src="productView.wxml"/>
+<import src="horizontalPView.wxml"/>
+<import src="menu.wxml"/>
+<template is="menu" data="{{product:materialList.navChannel, selectindex:selectIndex,animationData:animations,animationScroll:scroll,left:scrollLeft,screenwidth:screenWidth}}"/>
+<scroll-view  wx:for="{{materialList.materialList}}" wx:for-item="homeItem">
+<swiper class='banner-swiper'
+wx:if="{{homeItem.materialType===13}}"
+indicator-dots=true
+autoplay=true
+interval='5000'
+duration='500'>
+ <swiper-item class="swiper-item" wx:for="{{ homeItem.materialList }}">
+  <navigator url="{{item.link}}">
+   <image  src="{{ item.pictureUrl }}" class="slide-image"></image>
+  </navigator>
+ </swiper-item>
+</swiper>
+<view class="menu_container" wx:if="{{homeItem.materialType===3}}">
+    <block wx:for="{{homeItem.materialList}}" wx:for-index="idx" wx:for-item="menu">
+        <image style='width:{{screenWidth/homeItem.column}}px; height:{{screenWidth/homeItem.column*homeItem.ratio}}px' src="{{menu.pictureUrl}}" />
+    </block>
+</view>
+<image src='{{homeItem.pictureUrl}}'wx:elif="{{homeItem.materialType===0}}"
+style='width:{{screenWidth/homeItem.column}}px; height:{{screenWidth/homeItem.column*homeItem.ratio}}px'/>
+<block wx:elif="{{homeItem.materialType===18&&homeItem.column%1===0}}">
+<template is="productView" data="{{product:homeItem,screenwidth:screenWidth}}"/>
+</block>
+<block wx:elif="{{homeItem.materialType===18&&homeItem.column%1!==0}}">
+<template is="horizontalPView" data="{{product:homeItem}}"/>
+</block>
+</scroll-view>

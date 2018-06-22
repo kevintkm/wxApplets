@@ -1,0 +1,33 @@
+<!--pages/category/category.wxml-->
+<import src="../templates/categoryTitle.wxml" />
+<view style='height:50px;background:white'>
+  <view class='search_container'>
+    <image class='search_image' src='../../images/group_avatar.png'></image>
+    <text class='search_text'>keming</text>
+  </view>
+</view>
+<view style='background:#bbb;height:1px' />
+<view style='display:flex;flex-direction:row'>
+  <scroll-view scroll-y='true' style='height:{{screenHeight}}px;width:20%' scroll-into-view='{{intoIndex}} ' scroll-top='{{scrollTop}}'>
+    <block wx:for="{{categoryList}}">
+      <view style=' text-align:center; background:#eeeeee' bindtap='itemClick' id='index{{index}}' data-index='{{index}}'>
+        <image style='width: 80%;vertical-align: middle;margin-top:10px;' src='{{index==selectIndex?item.titleIconUrl:item.pictureUrl}}' mode='widthFix'></image>
+        <text style="  font-size: 12px;display:block; margin-top:5px; color: {{index==selectIndex?'#f11111':'#333333'}};">{{item.title}}</text>
+        <view style='height:1px;background-color:#c9c9c9;margin-top:10px;'></view>
+      </view>
+    </block>
+  </scroll-view>
+  <scroll-view scroll-y style='height:{{screenHeight}}px;width:80%'>
+    <block wx:for="{{categoryList[selectIndex].materialList}}" wx:for-item='categoryItem'>
+      <template wx:if='{{categoryItem.materialType==0}}' is='category_title' data="{{product:categoryItem}}" />
+      <view wx:if="{{categoryItem.materialType == 14}}">
+        <block wx:for="{{categoryItem.goodsList}}">
+          <view class='goodsList' style=' text-align:center;'>
+            <image src="{{item.pic_url}}" mode='widthFix' class='goodsimg'></image>
+            <text class='textname'>{{item.title}}</text>
+          </view>
+        </block>
+      </view>
+    </block>
+  </scroll-view>
+</view>

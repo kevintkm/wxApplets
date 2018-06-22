@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/category/category",
+    "pages/logs/logs",
+    "pages/selected/sWebView",
+    "pages/person/person",
+    "pages/order/orderList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "WeChat",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#767676",
+    "selectedColor": "#F95538",
+    "borderStyle": "white",
+    "list": [
+      {
+        "selectedIconPath": "images/tab_home_hilite.png",
+        "iconPath": "images/tab_home_normal.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "selectedIconPath": "images/tab_classity_hilite.png",
+        "iconPath": "images/tab_classity_normal.png",
+        "pagePath": "pages/category/category",
+        "text": "分类"
+      },
+      {
+        "selectedIconPath": "images/tab_nine_point_nine_hilite.png",
+        "iconPath": "images/tab_nine_point_nine_normal.png",
+        "pagePath": "pages/selected/sWebView",
+        "text": "优选"
+      },
+      {
+        "selectedIconPath": "images/tab_msg_hilite.png",
+        "iconPath": "images/tab_msg_normal.png",
+        "pagePath": "pages/category/category",
+        "text": "消息"
+      },
+      {
+        "selectedIconPath": "images/tab_my_hilite.png",
+        "iconPath": "images/tab_my_normal.png",
+        "pagePath": "pages/person/person",
+        "text": "我的"
+      }
+    ]
+  }
+}

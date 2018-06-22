@@ -1,0 +1,12 @@
+@import'../../order/orderList.wxss'
+<template name='order_item_bottom'>
+<view style='padding-top:8px;padding-bottom:8px;text-align:right;margin-right:10px'>
+<text >共{{num}}件商品 合计:￥{{price}}(运费:包邮)</text>
+</view>
+  <view class='order_title_diliver' />
+  <view style='padding-top:8px;padding-bottom:8px;display:flex;flex-direction:row-reverse'>
+  <text style='margin-right:20px;border:1px solid;border-radius:5px;border-color:red;padding:4px'>删除订单</text>
+  <text style='margin-right:20px;border:1px solid;border-radius:5px;border-color:red;padding:4px;padding-left:8px;padding-right:8px'>查看物流</text>
+  <text style='margin-right:20px;border:1px solid;border-radius:5px;border-color:red;padding:4px'>订单详情</text>
+  </view>
+</template>

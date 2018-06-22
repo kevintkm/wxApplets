@@ -1,0 +1,26 @@
+<!--pages/order/orderList.wxml-->
+<import src="../templates/orderItemTitle.wxml" />
+<import src="../templates/orderItemContent.wxml" />
+<import src="../templates/orderItemBottom.wxml" />
+<import src="../templates/emptyView.wxml" />
+<view>
+  <view class='order_title_diliver' />
+  <view class='order_title_container'>
+    <block wx:for="{{orderType}}" wx:key="aaa">
+      <text class="{{selectItem==index?'order_title_item_select':'order_title_item'}}" data-index='{{index}}' bindtap='itemClick'>{{item.title}}</text>
+    </block>
+  </view>
+  <view class='order_title_animation' animation="{{animationData}}"></view>
+  <view class='order_title_diliver' />
+  <scroll-view scroll-y='true'>
+  <block wx:for="{{orderList}}" wx:key='index'>
+  <view style='background:#ccc;height:6px;width:100%' wx:if="{{index>0}}"/>
+    <template is='order_item_title' data="{{order:item}}" />
+    <block wx:for="{{item.order_details}}" wx:key='key' wx:for-item='detail'>
+    <template is='order_item_content' data="{{product:detail,url:item.rights_logo_url}}" />
+     <template is='order_item_bottom' data="{{num:item.order_details.length,price:item.order_balance}}" />
+    </block>
+  </block>
+  <template is='empty_view'/>
+  </scroll-view>
+</view>
